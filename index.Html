@@ -3,27 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
     <title>IWeather</title>
   </head>
   <body>
-    <div class="weatherBox">   
-        <header>
-      <form class="searchForm">
-        <input type="search" placeholder="enter in a city..." class="searchFormInput"/>
-        <input type="submit" value="search" class="searchFormButton"/>
-      </form>
-    </header>
-    <main>
-        <hr>
-       <h1 class="currentCity">Paris</h1>
-       <p class="currentTime">Monday 10:00, Sunny <div class="weatherData">Humidity: 78% Wind Speed: 3Mph</div></p>
-       <h2><span class="weatherEmoji">☀️</span><span class="currentTemp">75</span><span class="degree">℉</span></h2>
-    </main>
-    <footer>
-        <hr>
-        <p>This project was coded by Chantell Davis and open sourced on GitHub and hosted on Netilfy</p>
-    </footer>
-</div>
- 
+    <div>
+      <span class="titleI">I</span> <span class="titleWeather">Weather</span>
+    </div>
+    <div class="weatherBox">
+      <header>
+        <form class="searchForm">
+          <input
+            type="search"
+            placeholder="Enter in a city..."
+            class="searchFormInput"
+          />
+          <input type="submit" value="search" class="searchFormButton" />
+        </form>
+      </header>
+      <main>
+        <hr />
+        <h1 class="currentCity">Paris</h1>
+        <p class="currentTime">
+          Monday 10:00 <span class="weatherCondition">Sunny</span>
+        </p>
+        <p class="weatherData">
+          Humidity: <strong class="Humidity">78%</strong> Wind Speed:
+          <strong class="wind">3 Mph</strong>
+        </p>
+        <h2 class="weatherDataTwo">
+          <span class="weatherEmoji">☀️</span><span class="currentTemp">75</span
+          ><span class="degree">℉</span>
+        </h2>
+      </main>
+      <footer>
+        <hr />
+        <p>
+          This project was coded by <a href="#">Chantell Davis</a> and
+          <a href="#">opensourced on GitHub</a> and
+          <a href="#">hosted on Netilfy</a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
