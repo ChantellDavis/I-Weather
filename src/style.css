@@ -3,14 +3,25 @@ body {
 }
 
 .titleI {
+    font-size: 100px;
+   position: relative;
+   left: 750px ;
+  color: white;
+
+}
+
+.titleWeather {
     font-size: 50px;
-   text-align: center;
+     position: relative;
+   left: 645px ; 
+   bottom: 15px;
+   color: rgb(93, 93, 93);
 }
 
 .weatherBox {
     background-color: white;
     margin: 90px auto;
-    max-width: 400px;
+    max-width: 500px;
     border: none;
     border-radius: 15px;
     padding: 50px 30px;
@@ -18,22 +29,24 @@ body {
 
 .searchFormInput {
     
-    width: 290px;
-    padding: 12px;
+    width: 370px;
+    padding: 20px;
     border: none;
     background-color: rgb(239, 227, 249);
     border-radius: 12px;
-    margin-left: 0px
+    margin-left: 0px;
+    font-size: 18px;
   
 }
 
 .searchFormButton {
-    padding: 11px 30px;
+    padding: 20px 30px;
     background-color: blueviolet;
     border: none;
     border-radius: 12px;
-    margin-left: 4px;
+    margin-left: 10px;
     color: white;
+    font-size: 18px;
 
 }
 
@@ -49,13 +62,16 @@ hr {
 
 .currentCity {
     margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 50px;
 }
 
 .currentTime , .weatherData {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .currentTime {
+    margin-top: 0px;
     margin-bottom: 5px;
     color: gray;
 }
@@ -70,28 +86,29 @@ strong {
 
 .currentTemp {
     position: relative;
-    left: 295px;
-    bottom:80px;
-    font-size: 40px;
+    left: 375px;
+    bottom:90px;
+    font-size: 50px;
 
 }
 
 .weatherEmoji {
     position: relative;
-    left: 290px;
-    bottom: 85px;
+    left: 375px;
+    bottom: 90px;
+    font-size: 40px;
 }
 
 .degree {
     font-size: 18px;
     font-weight: 100;
     position: relative;
-    left: 295px;
-    bottom: 95px;
+    left: 380px;
+    bottom: 112px;
 }
 
 footer {
-    font-size: 12px;
+    font-size: 18px;
     color: gray;
     text-align: center;
 
