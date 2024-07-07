@@ -80,6 +80,10 @@ hr {
     color: gray;
 }
 
+.weatherCondition{
+    font-size: 20px;
+}
+
 strong {
     color: rgb(246, 48, 81);
 }

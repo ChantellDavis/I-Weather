@@ -4,14 +4,36 @@ function getTemp(response) {
  let temperature = response.data.temperature.current;
  let weatherConditionElement = document.querySelector("#weather-Condition");
  let HumidityElement = document.querySelector("#Humidity");
- let humidity = `${response.data.temperature.humidity}%`
- let windElement = document.querySelector("#wind");
- 
- let windSpeed = `${response.data.wind.speed}`
+ let humidity = `${response.data.temperature.humidity}%`;
+ let currentCity = document.querySelector("#current-City");
+ let timeElement = document.querySelector("#time");
+ let date = new Date (response.data.time * 1000);
+
+currentCity.innerHTML = response.data.city;
+timeElement.innerHTML = displayTime(date);
 currentTempElement.innerHTML = Math.round(temperature);
 weatherConditionElement.innerHTML = response.data.condition.description;
 HumidityElement.innerHTML = (humidity);
-windElement.innerHTML = Math.round`${windSpeed}Mph`;
+}
+
+function displayTime(date) {
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    
+
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    let day = days[date.getDay()];
+
+    return `${day}, ${hours}:${minutes}`
 }
 
 function displayCity(city) {
@@ -23,10 +45,10 @@ axios.get(apiUrl).then(getTemp);
 function searchForCity(event) {
 event.preventDefault()
     let searchFormInput = document.querySelector("#search-Form-Input");
-    let currentCity = document.querySelector("#current-City");
-    currentCity.innerHTML = searchFormInput.value;
     displayCity(searchFormInput.value);
 }
 
 let searchForm = document.querySelector("#search-Form");
 searchForm.addEventListener("submit", searchForCity);
+
+displayCity("New York");
