@@ -8,7 +8,10 @@ function getTemp(response) {
  let currentCity = document.querySelector("#current-City");
  let timeElement = document.querySelector("#time");
  let date = new Date (response.data.time * 1000);
-
+let icon = document.querySelector("#icon");
+ icon.innerHTML = `<img src= "${response.data.condition.icon_url}"
+            class="weatherEmoji"
+           />`
 currentCity.innerHTML = response.data.city;
 timeElement.innerHTML = displayTime(date);
 currentTempElement.innerHTML = Math.round(temperature);
@@ -17,9 +20,12 @@ HumidityElement.innerHTML = (humidity);
 }
 
 function displayTime(date) {
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
+    let hours = date.getHours(); 
     
+    let minutes = date.getMinutes();
+   if (minutes < 10) {
+        let minutes = `0${minutes}`
+    };
 
     let days = [
         "Sunday",

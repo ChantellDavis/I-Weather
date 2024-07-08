@@ -90,26 +90,27 @@ strong {
 
 .currentTemp {
     position: relative;
-    left: 375px;
-    bottom:90px;
-    font-size: 50px;
+    left: 420px;
+    bottom:210px;
+    font-size: 55px;
 
 }
 
 .weatherEmoji {
     position: relative;
-    left: 375px;
-    bottom: 90px;
-    font-size: 40px;
+    left: 320px;
+    bottom: 125px;
+    font-size: 15px;
 }
 
 .degree {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 100;
     position: relative;
-    left: 380px;
-    bottom: 112px;
+    left: 420px;
+    bottom: 235px;
 }
+
 
 footer {
     font-size: 18px;
