@@ -1,5 +1,5 @@
 function getTemp(response) {
-   console.log  (response.data);
+   
   let currentTempElement = document.querySelector("#current-Temp");
  let temperature = response.data.temperature.current;
  let weatherConditionElement = document.querySelector("#weather-Condition");
@@ -54,7 +54,14 @@ event.preventDefault()
     displayCity(searchFormInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+    let apiKey = "50a8380f4oe8265a54940c506tc9b3e0"
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`
+axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+    console.log(response.data)
     let forecastElement = document.querySelector("#forcast-Data");
 let forecastHtml = "";
 let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -74,5 +81,6 @@ forecastElement.innerHTML = forecastHtml
 let searchForm = document.querySelector("#search-Form");
 searchForm.addEventListener("submit", searchForCity);
 
+getForecast("New York");
 displayCity("New York");
-displayForecast();
+displayForecast(); 

@@ -21,29 +21,31 @@ body {
 .weatherBox {
     background-color: white;
     margin: 90px auto;
-    max-width: 500px;
+    max-width: 700px;
     border: none;
-    border-radius: 15px;
+    border-radius: 25px;
     padding: 50px 30px;
+    box-shadow: 8px 8px 20px 30px rgba(0, 0, 255, .2);
 }
 
 .searchFormInput {
     
-    width: 370px;
+    width: 500px;
     padding: 20px;
     border: none;
     background-color: rgb(239, 227, 249);
-    border-radius: 12px;
-    margin-left: 0px;
+    border-radius: 20px;
+    margin-left: 35px;
+    
     font-size: 18px;
   
 }
 
 .searchFormButton {
-    padding: 20px 30px;
+    padding: 19px 35px;
     background-color: blueviolet;
     border: none;
-    border-radius: 12px;
+    border-radius: 20px;
     margin-left: 10px;
     color: white;
     font-size: 18px;
@@ -61,27 +63,28 @@ hr {
 }
 
 .currentCity {
-    margin-top: 25px;
+    text-align: center;
+    margin-top: 40px;
     margin-bottom: 10px;
-    font-size: 50px;
+    font-size: 70px;
 }
 
-.currentTime , .weatherData {
-    font-size: 20px;
+.currentTime , .weatherData,.weatherCondition {
+    font-size: 21px;
 }
 
-.currentTime {
-    margin-top: 0px;
-    margin-bottom: 5px;
+.currentTime  {
+    margin: 60px 0 5px 90px;
     color: gray;
 }
 .weatherData {
     margin-top: 0px;
+    margin-left: 90px;
     color: gray;
 }
 
 .weatherCondition{
-    font-size: 20px;
+    margin-left: 90px;
 }
 
 strong {
@@ -90,47 +93,51 @@ strong {
 
 .currentTemp {
     position: relative;
-    left: 420px;
-    bottom:210px;
-    font-size: 55px;
+    left: 500px;
+    bottom:230px;
+    font-size: 80px;
 
 }
 
 .weatherEmoji {
     position: relative;
-    left: 320px;
+    left: 400px;
     bottom: 125px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .degree {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 100;
     position: relative;
-    left: 420px;
-    bottom: 235px;
+    left: 500px;
+    bottom: 270px;
 }
 
 .forcastDate {
-   font-size: 20px;
+   font-size: 21px;
    position: relative;
    bottom: 100px;
-   left: 20px;
+   right: -10px;
 }
 
 .forcastEmoji {
  position: relative;
-   bottom: 90px;
-   left: 3px;    
+   bottom: 70px;
+   right: 45px;    
 }
 
 .forcastTemp {
     font-size: 20px;
     position: relative;
-   bottom: 80px;
-   left: 3px; 
+   top: 10px;
+   right: 95px; 
 }
 
+#forcast-Data {
+  display: flex;
+  align-content: center;
+}
 
 footer {
     font-size: 18px;
