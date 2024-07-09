@@ -54,7 +54,25 @@ event.preventDefault()
     displayCity(searchFormInput.value);
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector("#forcast-Data");
+let forecastHtml = "";
+let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+days.forEach(function(day) {
+ forecastHtml = forecastHtml +
+ `<div class="forcastDate">${day}</div>
+          <img
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+            alt=""
+            class="forcastEmoji"
+            width="70px"
+          />
+          <div class="forcastTemp"><strong>75°</strong> 55°</div>`;   
+})
+forecastElement.innerHTML = forecastHtml
+}
 let searchForm = document.querySelector("#search-Form");
 searchForm.addEventListener("submit", searchForCity);
 
 displayCity("New York");
+displayForecast();

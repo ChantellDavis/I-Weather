@@ -111,6 +111,26 @@ strong {
     bottom: 235px;
 }
 
+.forcastDate {
+   font-size: 20px;
+   position: relative;
+   bottom: 100px;
+   left: 20px;
+}
+
+.forcastEmoji {
+ position: relative;
+   bottom: 90px;
+   left: 3px;    
+}
+
+.forcastTemp {
+    font-size: 20px;
+    position: relative;
+   bottom: 80px;
+   left: 3px; 
+}
+
 
 footer {
     font-size: 18px;
