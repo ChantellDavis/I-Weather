@@ -64,7 +64,7 @@ function displayForecast(response) {
     console.log(response.data)
     let forecastElement = document.querySelector("#forcast-Data");
 let forecastHtml = "";
-let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+let days = ["Tue", "Wed", "Thu", "Fri", "Sat"]
 days.forEach(function(day) {
  forecastHtml = forecastHtml +
  `<div class="forcastDate">${day}</div>
@@ -74,7 +74,8 @@ days.forEach(function(day) {
             class="forcastEmoji"
             width="70px"
           />
-          <div class="forcastTemp"><strong>75°</strong> 55°</div>`;   
+          <div class="forcastTemp"><strong>75°</strong></div>
+          <div class="forecastTempTwo">55°</div>`;   
 })
 forecastElement.innerHTML = forecastHtml
 }
