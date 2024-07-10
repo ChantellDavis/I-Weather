@@ -17,6 +17,7 @@ timeElement.innerHTML = displayTime(date);
 currentTempElement.innerHTML = Math.round(temperature);
 weatherConditionElement.innerHTML = response.data.condition.description;
 HumidityElement.innerHTML = (humidity);
+getForecast(response.data.city);
 }
 
 function displayTime(date) {
@@ -56,7 +57,8 @@ event.preventDefault()
 
 function getForecast(city) {
     let apiKey = "50a8380f4oe8265a54940c506tc9b3e0"
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`
+    console.log(apiUrl);
 axios.get(apiUrl).then(displayForecast);
 }
 
@@ -82,6 +84,6 @@ forecastElement.innerHTML = forecastHtml
 let searchForm = document.querySelector("#search-Form");
 searchForm.addEventListener("submit", searchForCity);
 
-getForecast("New York");
+
 displayCity("New York");
 displayForecast(); 
