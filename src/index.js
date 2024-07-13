@@ -52,9 +52,16 @@ axios.get(apiUrl).then(getTemp);
 function searchForCity(event) {
 event.preventDefault()
     let searchFormInput = document.querySelector("#search-Form-Input");
+    
     displayCity(searchFormInput.value);
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let days = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+   
+        return days[date.getDay()];
+}
 function getForecast(city) {
     let apiKey = "50a8380f4oe8265a54940c506tc9b3e0"
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`
@@ -66,18 +73,20 @@ function displayForecast(response) {
     console.log(response.data)
     let forecastElement = document.querySelector("#forcast-Data");
 let forecastHtml = "";
-let days = ["Tue", "Wed", "Thu", "Fri", "Sat"]
-days.forEach(function(day) {
+
+response.data.daily.forEach(function(day, index) {
+    if (index < 5) {
+        
+    
  forecastHtml = forecastHtml +
- `<div class="forcastDate">${day}</div>
+ `<div class="forcastDate">${formatDay(day.time)}</div>
           <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
-            alt=""
+            src="${day.condition.icon_url}"
             class="forcastEmoji"
-            width="70px"
-          />
-          <div class="forcastTemp"><strong>75°</strong></div>
-          <div class="forecastTempTwo">55°</div>`;   
+            />
+          <div class="forcastTemp"><strong>${Math.round(day.temperature.maximum)}°</strong></div>
+          <div class="forecastTempTwo">${Math.round(day.temperature.minimum)}°</div>`; 
+          }  
 })
 forecastElement.innerHTML = forecastHtml
 }
@@ -85,5 +94,5 @@ let searchForm = document.querySelector("#search-Form");
 searchForm.addEventListener("submit", searchForCity);
 
 
-displayCity("New York");
+displayCity("Queens");
 displayForecast(); 
